@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the aerial beauty of Lingayen - Official Tourism Website">
+    <title>Lingayen | Skyward Beauty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007BFF;
+            --secondary: #0056b3;
+            --text: #333;
+            --bg: #ffffff;
+            --hero-text: #ffffff;
+            --hero-overlay: rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: url('Pangasinan Provincial Capitol Building.jpg') no-repeat center center/cover;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--hero-overlay);
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--hero-text);
+            padding: 0 1rem;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.8);
+            animation: fadeInUp 1.5s ease-out;
+            color: #ffd700; /* Vibrant gold color */
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+            color: #ffffff; /* White for contrast */
+        }
+
+        /* Drone Gallery */
+        .gallery-section {
+            padding: 5rem 0;
+            background: #f9f9f9;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-title {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .video-description {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+                background: none;
+                border: none;
+                color: var(--text);
+                font-size: 1.5rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <h1 class="logo">Lingayen</h1>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#gallery">Aerial Views</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Lingayen</h1>
+            <p class="hero-subtitle">A Bird's Eye View of Coastal Majesty</p>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-container">
+            <h2 class="section-title">Aerial Perspectives</h2>
+            <div class="video-gallery">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1062016170?h=20f8f715ca&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
+                                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                                title="Aerial View of Northern Lingayen"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Northern Lingayen</h3>
+                        <p class="video-description">Explore the northern landscapes of Lingayen from above.</p>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1062016471?h=0c5e1a0bec&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
+                                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                                title="Aerial View of Lingayen Beach"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Lingayen Beach</h3>
+                        <p class="video-description">Stunning views of the pristine Lingayen Beach coastline.</p>
+                    </div>
+                </div>
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1062016602?h=2f34f9613d&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
+                                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                                title="Aerial View of Limahong Channel"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Limahong Channel</h3>
+                        <p class="video-description">Aerial view of the historic Limahong Channel.</p>
+                    </div>
+                </div>
+                <!-- Video 4 -->
+                <div class="video-card">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1062016694?h=bd4ff09480&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
+                                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                                title="Aerial View of Lingayen Beachfront"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Beachfront</h3>
+                        <p class="video-description">Breathtaking views of Lingayen's iconic beachfront.</p>
+                    </div>
+                </div>
+                <!-- Video 5 -->
+                <div class="video-card">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1062016783?h=db20c941cd&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
+                                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                                title="Second Aerial View of Beachfront"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Beachfront 2</h3>
+                        <p class="video-description">View of the beachfront in a cloudy weather.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <p><strong>Mayor's Office:</strong> <a href="tel:+63756324337">(075) 632-4337</a></p>
+                <p><strong>Tourism Office:</strong> <a href="tel:+63755427095">(075) 542-7095</a></p>
+                <p><strong>Email:</strong> <a href="mailto:tourism@lingayen.gov.ph">tourism@lingayen.gov.ph</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Connect With Lingayen</h3>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>Municipality of Lingayen © 2024 | All rights reserved</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Load Vimeo API script
+        const vimeoScript = document.createElement('script');
+        vimeoScript.src = 'https://player.vimeo.com/api/player.js';
+        document.body.appendChild(vimeoScript);
+    </script>
+</body>
+</html>
