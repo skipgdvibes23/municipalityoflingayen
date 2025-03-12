@@ -3,262 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the aerial beauty of Lingayen - Official Tourism Website">
-    <title>Lingayen | Skyward Beauty</title>
+    <meta name="description" content="Discover the beauty of Lingayen - Official Tourism Website">
+    <title>Lingayen | Municipality of Lingayen</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #007BFF;
-            --secondary: #0056b3;
-            --text: #333;
-            --bg: #ffffff;
-            --hero-text: #ffffff;
-            --hero-overlay: rgba(0, 0, 0, 0.5);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text);
-            background: var(--bg);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Header Styles */
-        header {
-            position: fixed;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            padding: 1rem 0;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: url('Pangasinan Provincial Capitol Building.jpg') no-repeat center center/cover;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--hero-overlay);
-            z-index: 1;
-        }
-
-        .hero-content {
-            text-align: center;
-            color: var(--hero-text);
-            padding: 0 1rem;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 15px rgba(0,0,0,0.8);
-            animation: fadeInUp 1.5s ease-out;
-            color: #ffd700; /* Vibrant gold color */
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
-            color: #ffffff; /* White for contrast */
-        }
-
-        /* Drone Gallery */
-        .gallery-section {
-            padding: 5rem 0;
-            background: #f9f9f9;
-        }
-
-        .gallery-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            font-family: 'Playfair Display', serif;
-            color: var(--primary);
-        }
-
-        .video-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .video-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-info {
-            padding: 1.5rem;
-        }
-
-        .video-title {
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-        }
-
-        .video-description {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 5rem 0;
-            background: white;
-        }
-
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-info {
-            margin-top: 2rem;
-        }
-
-        .contact-info p {
-            margin: 1rem 0;
-            font-size: 1.1rem;
-        }
-
-        .contact-info a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .social-links {
-            margin: 2rem 0;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-                background: none;
-                border: none;
-                color: var(--text);
-                font-size: 1.5rem;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
     <header>
@@ -266,7 +15,9 @@
             <h1 class="logo">Lingayen</h1>
             <div class="nav-links">
                 <a href="#home">Home</a>
-                <a href="#gallery">Aerial Views</a>
+                <a href="#about">About</a>
+                <a href="#image-gallery">Images</a>
+                <a href="#gallery">Videos</a>
                 <a href="#contact">Contact</a>
             </div>
             <button class="mobile-menu"><i class="fas fa-bars"></i></button>
@@ -277,14 +28,115 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Welcome to Lingayen</h1>
-            <p class="hero-subtitle">A Bird's Eye View of Coastal Majesty</p>
+            <p class="hero-subtitle">Home of the World's Best Bagoong</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h2>About Lingayen</h2>
+            <p>
+                In 1614, the Augustinian missionaries and Spanish conquistadores drew up a plan for Lingayen, marking its official founding. The town’s name, Lingayen, originated from a suggestion by the natives, inspired by a massive tamarind tree that once stood in the present-day town plaza. This tree was so exceptionally large and towering that it dwarfed the surrounding trees. Passersby were often captivated by its size, frequently looking back at it until it disappeared from sight. When asked which route they had taken on their way home, they would simply respond, through Liñgayen. This name was derived from the Pangasinan word "Lingawen," meaning to look back. Over time, the town officially adopted the name Lingayen, which it continues to bear today.
+            </p>
+            <p>
+                Lingayen later became the capital of Pangasinan when the province was designated as an encomienda during the Spanish colonial period.
+            </p>
+            <p>
+                During World War II, Lingayen played a significant role in history as the landing site of the Allied forces during the Invasion of Lingayen Gulf. Its expansive shoreline served as a crucial runway for attack planes, making it a strategic location in the liberation efforts of the Philippines.
+            </p>
+            <p>
+                Lingayen Beach, is a breathtaking public beach that offers free access to visitors. Unlike other popular beaches in the province, such as Hundred Islands in Alaminos, Patar Beach in Bolinao, and Tondol Beach in Anda, Lingayen Beach is known for its unique powdery grey sand. What makes it even more special is that cottages are available free of charge, allowing visitors to enjoy a full day by the shore without any fees.
+            </p>
+            <p>
+                Situated in front of the Provincial Capitol, Lingayen Beach boasts a long stretch of grey sand, well-maintained public bathrooms, and uniformly sized cottages. A spacious grass field before the shoreline provides a perfect space for children to play, making it one of the most organized public beaches in the province.
+            </p>
+            <p>
+                Beyond its scenic shoreline, Lingayen Beach also offers visitors a glimpse into history. Just a short distance away is the Veterans Memorial Park, a must-visit attraction showcasing photographs, war artifacts, and remnants from World War II. On display are actual fighter planes, tanks, and cannons used in battle, making it the most valued museum in Pangasinan. Visitors can also explore the Provincial Capitol of Pangasinan, which stands across from the park, further enriching their experience with the province’s rich heritage.
+            </p>
+            <p>
+                For more information, visit the Official Tourism page online.
+            </p>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="image-gallery-section" id="image-gallery">
+        <div class="gallery-container">
+            <h2 class="section-title">Image Gallery</h2>
+            <div class="image-gallery">
+                <!-- Image 1 -->
+                <div class="image-card">
+                    <img src="Church_of_Lingayen_Pangasinan.jpg" alt="Church of Lingayen Pangasinan">
+                    <div class="image-info">
+                        <h3 class="image-title">Church of Lingayen Pangasinan</h3>
+                        <p class="image-description">A historic church showcasing Spanish colonial architecture.</p>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="image-card">
+                    <img src="Lingayen Beach waves.jpg" alt="Lingayen Beach waves">
+                    <div class="image-info">
+                        <h3 class="image-title">Lingayen Beach Waves</h3>
+                        <p class="image-description">The calming waves of Lingayen Beach, perfect for relaxation.</p>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="image-card">
+                    <img src="Lingayen_Beach_during_sunset.jpg" alt="Lingayen Beach during sunset">
+                    <div class="image-info">
+                        <h3 class="image-title">Lingayen Beach Sunset</h3>
+                        <p class="image-description">A breathtaking view of Lingayen Beach during sunset.</p>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="image-card">
+                    <img src="Lingayen_TownHall13.jpg" alt="Lingayen Town Hall">
+                    <div class="image-info">
+                        <h3 class="image-title">Lingayen Town Hall</h3>
+                        <p class="image-description">The historic town hall of Lingayen, a symbol of local governance.</p>
+                    </div>
+                </div>
+                <!-- Image 5 -->
+                <div class="image-card">
+                    <img src="Pangasinan Provincial Capitol Building.jpg" alt="Pangasinan Provincial Capitol Building">
+                    <div class="image-info">
+                        <h3 class="image-title">Pangasinan Provincial Capitol</h3>
+                        <p class="image-description">The iconic Provincial Capitol Building of Pangasinan.</p>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="image-card">
+                    <img src="Pangasinan Provincial Capitol Park.jpg" alt="Pangasinan Provincial Capitol Park">
+                    <div class="image-info">
+                        <h3 class="image-title">Provincial Capitol Park</h3>
+                        <p class="image-description">A serene park near the Provincial Capitol Building.</p>
+                    </div>
+                </div>
+                <!-- Image 7 -->
+                <div class="image-card">
+                    <img src="Pangasinan-Provincial_Capitol_2.jpg" alt="Pangasinan Provincial Capitol">
+                    <div class="image-info">
+                        <h3 class="image-title">Provincial Capitol</h3>
+                        <p class="image-description">Another view of the majestic Provincial Capitol Building.</p>
+                    </div>
+                </div>
+                <!-- Image 8 -->
+                <div class="image-card">
+                    <img src="Provincial Capitol with Philippine Flag .jpg" alt="Provincial Capitol with Philippine Flag">
+                    <div class="image-info">
+                        <h3 class="image-title">Provincial Capitol with Flag</h3>
+                        <p class="image-description">The Provincial Capitol Building proudly flying the Philippine flag.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Video Gallery Section -->
     <section class="gallery-section" id="gallery">
         <div class="gallery-container">
-            <h2 class="section-title">Aerial Perspectives</h2>
+            <h2 class="section-title">Video Gallery</h2>
             <div class="video-gallery">
                 <!-- Video 1 -->
                 <div class="video-card">
@@ -309,7 +161,7 @@
                     </div>
                     <div class="video-info">
                         <h3 class="video-title">Lingayen Beach</h3>
-                        <p class="video-description">Stunning views of the pristine Lingayen Beach coastline.</p>
+                        <p class="video-description">Stunning views of the coastline.</p>
                     </div>
                 </div>
                 <!-- Video 3 -->
@@ -381,29 +233,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Load Vimeo API script
-        const vimeoScript = document.createElement('script');
-        vimeoScript.src = 'https://player.vimeo.com/api/player.js';
-        document.body.appendChild(vimeoScript);
-    </script>
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
 </body>
 </html>
